@@ -19,8 +19,21 @@ body {
 .container {
 	background: rgba(255,255,255,0.85);
 	padding: 3em;
+	animation-name: come;
+	animation-duration: 2s;
 }
 
 #aboutus {
 	font-size: 1.37em;
+}
+
+@keyframes come {
+	from {
+		position: absolute;
+		left: -1000px;
+	}
+	to {
+		position: absolute;
+		left : 320px;
+	}
 }
