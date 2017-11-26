@@ -8,76 +8,74 @@
 
   	<!--Let browser know website is optimized for mobile-->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn+SC:400,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
 
   <body>
   	<!--Import jQuery before materialize.js-->
   	<div class="container">
   		<div class="row">
-  			<!-- TABS -->
-  			<div class="col s12">
-  				<ul class="tabs">
-  					<li class="tab col s4"><a class="active" href="#signup">Sign Up</a></li>
-  					<li class="tab col s4"><a href="#login">Log In</a></li>
-  					<li class="tab col s4 "><a href="#about">About</a></li>
-  				</ul>
-  			</div>
-  			<!-- SIGNUP PAGE-->
-  			<div id="signup" class="col s12">
-  				<div class="row">
-  					<form class="col s12">
-
-  						<div class="row">
-  							<div class="input-field col s6">
-  								<input id="first_name" type="text" class="validate">
-  								<label for="first_name">First Name</label>
-  							</div>
-  							<div class="input-field col s6">
-  								<input id="last_name" type="text" class="validate">
-  								<label for="last_name">Last Name</label>
-  							</div>
-  						</div>
-
-  						<div class="row">
-  							<div class="input-field col s6">
-  								<input id="tel" type="tel" class="validate">
-  								<label for="tel">Telephone</label>
-  							</div>
-  						</div>
-
-  						<div class="row">
-  							<div class="col s6">
-  							</div>
-  						</div>
-
-
-  						<div class="row">
-  							<div class="col s12">
-  								    <div class="file-field input-field">
-      <div class="btn">
-        <span>File</span>
-        <input type="file">
+       <nav class="black">
+        <div class="nav-wrapper">
+          <a id="logo" href="#" class="deep-orange-text text-accent-3">RE<span class="white-text">FUGEE</span>QUEST</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><input type="file" name="fingerprint"></li>
+          </ul>
+        </div>
+      </nav>
+      <form class="col s6">
+        <div class="row">
+          <div class="input-field col s12">
+            <input  id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+          </div>          
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="phone" type="tel" name="phone" class="validate">
+            <label for="phone">Phone Number</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <span style="width: 20%; line-height: 3em;">Birth date: </span>
+            <input style="width: 70%; float: right" id="dob" type="date" name="dob">
+          </div>
+          <div class="col s6">
+            
+          </div>
+        </div>
+      </form>
+      <div class="col s6">
+        <div class="row">
+          <div class="col s12"><h1 class="center-align red">About us</h1></div>
+        </div>
+        <div class="row">
+          <div class="col s2">&#9733;</div>
+          <div class="col s8">
+            <p>RefugeeQuest is a data collection platform for the government and
+                United Nations High Commissioner for Refugees (UNHCR) to keep track of their refugees.
+                A staff member of UNHCR can access a refugee's whereabouts, contact information, and other data 
+                by logging in using their corresponding biometric registration data.
+                A refugee can also login to update their information accordingly, and write about
+                their current situation. </p>
+          </div>
+          <div class="col s2">&#9733;</div>
+        </div>
+        <div class="row">
+          <div class="col s12"><h1 class="center-align black">.</h1></div>
+        </div>        
       </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
-      </div>
-    </div>	
-  							</div>
-  						</div>
-
-  					</form>
-  				</div>
-  			</div>
-  			<!-- LOGIN PAGE -->
-  			<div id="login" class="col s12">Test 2</div>
-  			<!-- ABOUT PAGE -->
-  			<div id="about" class="col s12">
-  				<h2>About Us</h2>
-  				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-  			</div>
-  		</div>
-  	</div>
-  	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  	<script type="text/javascript" src="js/materialize.min.js"></script>
-  </body>
-  </html>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>

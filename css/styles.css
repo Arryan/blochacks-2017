@@ -1,0 +1,10 @@
+#logo {
+	font-family: 'Vollkorn SC', serif;
+	margin-left: 1em;
+	font-size: 2em;
+}
+
+
+nav::first-letter { 
+    font-size: 1.5em;
+}
