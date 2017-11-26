@@ -22,6 +22,7 @@
             <li><a href="#document-upload">Upload Documents</a></li>
             <li><a href="#connect-relatives">Connect with Relatives</a></li>
             <li><a href="#current-situation">Current Situation</a></li>
+            <li><a href="#update-info">Update Info</a></li>
             <li><a id="logout">Logout</a></li>
           </ul>
         </div>
@@ -29,12 +30,30 @@
         <div class="col s12 m9 l10">
           <h2 id="welcome"></h2>
           <div id="document-upload" class="section scrollspy">
-            <p>Content </p>
+            <div class="row">
+              <div class="col s12">
+                <h4>Upload Documents:</h4>
+                <input id="upload-file" type="file" name="upload-file" value="document">
+                <ul>
+                  <li><b>Documents such as:</b></li>
+                  <li>Birth certificate</li>
+                  <li>Diplomas</li>
+                  <li>Passports</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div id="connect-relatives" class="section scrollspy">
             <p>Content </p>
           </div>
           <div id="current-situation" class="section scrollspy">
+            <h4>New Update</h4>
+            <textarea id="update-area"></textarea>
+            <a id="update-area-btn" class="btn">Submit</a>
+            <h4>Past Updates</h4>
+
+          </div>
+          <div id="update-info" class="section scrollspy">
             <p>Content </p>
           </div>
         </div>

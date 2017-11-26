@@ -11,7 +11,8 @@
 	firebase.initializeApp(config);
 
 	const btnLogout = document.getElementById("logout");
-
+	const uploadBtn = document.getElementById("upload-file");
+	
 
 
 	btnLogout.addEventListener('click', e => {
@@ -23,20 +24,55 @@
 		  alert(error.message);
 		});
 
-});
+	});
 
 	// Add a realtime listener
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser) {
 			const txtWelcome = document.getElementById("welcome");
+			const uploadBtn = document.getElementById("upload-file");
+			const txtUpdateArea = document.getElementById("update-area");
+			const updateAreaBtn = document.getElementById("update-area-btn");
 			const userId = firebaseUser.uid;
-			let data;
+			let data = {};
+
 			firebase.database().ref('/users/' + userId).once('value')
 			.then(function(snapshot){
 				let data = snapshot.val();
+				let updates = data.lifeupdates;
 				txtWelcome.innerText = "Welcome, " + data.firstname;
-			})
+				//for(let key in data[lifeupdates]) {
+				//	console.log(key);
+				//}
+				console.log(data)
+			});
 
+			firebase.database().ref('/users/' + userId + "/lifeupdates").once('value')
+				.then(function(snapshot){
+				let data = snapshot.val();
+				console.log(data);
+				txtWelcome.innerText = "Welcome, " + data.firstname;
+				for(let key in data) {
+					let heading = document.createElement("h5");
+					let txt = document.createElement("p");
+					heading.innerText = key;
+					txt.innerText = data[key].update;
+					document.getElementById("current-situation").append(heading);
+					document.getElementById("current-situation").append(txt);
+				}
+				console.log(data)
+			});
+
+			uploadBtn.addEventListener('click', e => {
+				let pic = uploadBtn.value;
+			});
+
+			updateAreaBtn.addEventListener('click', e => {	
+				let currentTime = Date();
+				firebase.database().ref('/users/' + userId + "/lifeupdates/" + currentTime).set({
+						update: txtUpdateArea.value
+				});
+			});
 		}
 		else {
 			document.location.href = "index.html";
