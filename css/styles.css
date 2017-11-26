@@ -1,10 +1,26 @@
 #logo {
-	font-family: 'Vollkorn SC', serif;
 	margin-left: 1em;
-	font-size: 2em;
+	font-size: 3em;
+	font-weight: bold;
+}
+html{
+	font-family: 'Ubuntu', sans-serif;
 }
 
-
 nav::first-letter { 
-    font-size: 1.5em;
+    font-size: 1.2em;
+}
+
+body {
+	background-image: url("https://cdn.pixabay.com/photo/2015/09/23/09/33/war-953246_960_720.jpg");
+	background-size:cover;
+}
+
+.container {
+	background: rgba(255,255,255,0.85);
+	padding: 3em;
+}
+
+#aboutus {
+	font-size: 1.37em;
 }
