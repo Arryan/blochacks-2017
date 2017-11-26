@@ -56,15 +56,12 @@
 				}
 			});
 
-			uploadBtn.addEventListener('click', e => {
-				let pic = uploadBtn.value;
-			});
-
 			updateAreaBtn.addEventListener('click', e => {	
 				let currentTime = Date();
 				firebase.database().ref('/users/' + userId + "/lifeupdates/" + currentTime).set({
 					update: txtUpdateArea.value
 				});
+				window.location = "home.html";
 			});
 
 
