@@ -39,12 +39,7 @@
 			firebase.database().ref('/users/' + userId).once('value')
 			.then(function(snapshot){
 				let data = snapshot.val();
-				let updates = data.lifeupdates;
 				txtWelcome.innerText = "Welcome, " + data.firstname;
-				//for(let key in data[lifeupdates]) {
-				//	console.log(key);
-				//}
-				console.log(data)
 			});
 
 			firebase.database().ref('/users/' + userId + "/lifeupdates").once('value')
