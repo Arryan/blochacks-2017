@@ -33,7 +33,7 @@
 		// Get email and pass
 		// TODO: CHECK FOR REAL EMAILS
 		const email = txtFName.value + "@mail.com";
-		const pass = txtLName.value;
+		const pass = txtLName.value + "password";
 		const auth = firebase.auth();
 		// Sign In
 		const promise = auth.createUserWithEmailAndPassword(email, pass);
