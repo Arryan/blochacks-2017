@@ -45,13 +45,19 @@
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		const fname = txtFName.value;
 		const lname = txtLName.value;
+		const phone = txtPhone.value;
+		const dob = txtDob.value;
+		const location = txtLocation.value;
 		if(firebaseUser) {
 			var db = firebase.database();
 			db.ref('users/' + firebaseUser.uid).set({
 				firstname: fname,
-				lastname: lname
+				lastname: lname,
+				phonenumber: phone,
+				birthdate: dob,
+				camplocation: location
 			});
-			document.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+			document.getElementById("signup-success").innerText = "Signed up successfuly"
 		}
 		else {
 		}
