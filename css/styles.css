@@ -30,7 +30,6 @@ body {
 @keyframes come {
 	from {
 		position: relative;
-		margin: auto;
 		left: -100%;
 	}
 	to {
