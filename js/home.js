@@ -15,6 +15,7 @@
 	
 
 
+
 	btnLogout.addEventListener('click', e => {
 		firebase.auth().signOut()
 		.then(function() {
@@ -43,10 +44,8 @@
 			});
 
 			firebase.database().ref('/users/' + userId + "/lifeupdates").once('value')
-				.then(function(snapshot){
+			.then(function(snapshot){
 				let data = snapshot.val();
-				console.log(data);
-				txtWelcome.innerText = "Welcome, " + data.firstname;
 				for(let key in data) {
 					let heading = document.createElement("h5");
 					let txt = document.createElement("p");
@@ -55,7 +54,6 @@
 					document.getElementById("current-situation").append(heading);
 					document.getElementById("current-situation").append(txt);
 				}
-				console.log(data)
 			});
 
 			uploadBtn.addEventListener('click', e => {
@@ -65,9 +63,25 @@
 			updateAreaBtn.addEventListener('click', e => {	
 				let currentTime = Date();
 				firebase.database().ref('/users/' + userId + "/lifeupdates/" + currentTime).set({
-						update: txtUpdateArea.value
+					update: txtUpdateArea.value
 				});
 			});
+
+
+			function getLocation() {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(function(pos) {
+						//console.log(pos);
+						firebase.database().ref('/users/' + userId + "/camplocation/").set({
+							latitude: pos.coords.latitude,
+							longitude: pos.coords.longitude
+						});
+					});
+				} else { 
+					console.log("Geolocation is not supported by this browser.");
+				}
+			}
+			getLocation();
 		}
 		else {
 			document.location.href = "index.html";
