@@ -12,7 +12,7 @@ nav::first-letter {
 }
 
 body {
-	background-image: url("https://cdn.pixabay.com/photo/2015/09/23/09/33/war-953246_960_720.jpg");
+	background-image: url("../bg.jpg");
 	background-size:cover;
 }
 
@@ -29,23 +29,9 @@ body {
 
 @keyframes come {
 	from {
-		transform: rotate3d(1,1,1,10000deg);
-	}
-	10% {
-		display: hidden;
-	}
-	20% {
-		display: block;
-	}
-	30% {
-		display: none;
-	}
-	50% {
-		display: block;
-		width: 10%;
-		height: 10%;
+		opacity: 0;
 	}
 	to {
-		transform: rotate3d(0,1,0.5,0deg);
+		opacity: 1;
 	}
 }
