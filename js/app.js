@@ -32,8 +32,8 @@
 	btnSignup.addEventListener('click', e => {
 		// Get email and pass
 		// TODO: CHECK FOR REAL EMAILS
-		const email = txtFName.value + "@mail.com";
-		const pass = txtLName.value + "password";
+		const email = txtFName.value;
+		const pass = txtLName.value;
 		const auth = firebase.auth();
 		// Sign In
 		const promise = auth.createUserWithEmailAndPassword(email, pass);
